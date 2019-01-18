@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  name            :text
+#  username        :text
+#  email           :text
+#  password_digest :text
+#  phone           :string
+#  street          :string
+#  suburb          :text
+#  city            :text
+#  country         :text
+#  bio             :text
+#  image           :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+class User < ApplicationRecord
+end
