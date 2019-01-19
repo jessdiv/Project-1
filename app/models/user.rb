@@ -19,6 +19,7 @@
 #
 
 class User < ApplicationRecord
+  Authenticate::User
   has_secure_password
   has_many :items
   has_many :categories, :through => :items

@@ -1,0 +1,18 @@
+<h1>Log into your account</h1>
+
+<%= form_tag login_path do %>
+
+<%= label_tag :email %>
+<%= email_field_tag :email %>
+
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+
+<%= submit_tag "Sign in" %>
+
+<% if flash[:error_message].present? %>
+  <p><%= flash[:error_message] %></p>
+
+<% end %>
+
+<% end %>

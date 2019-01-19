@@ -1,0 +1,26 @@
+<%= form_for @item do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, :required => true %>
+
+<%= f.label :brand %>
+<%= f.text_field :brand, :required => true %>
+
+<%= f.label :dayprice %>
+<%= f.text_field :dayprice, :require => true  %>
+
+<%= f.label :weekprice %>
+<%= f.text_field :weekprice%>
+
+<%= f.label :monthprice %>
+<%= f.text_field :monthprice%>
+
+<%= f.label :description %>
+<%= f.text_area :description, :required => true%>
+
+<%= f.label :image %>
+<%= f.text_field :image, :required => true %>
+
+<%= f.submit "Sign Up!" %>
+
+<% end %>

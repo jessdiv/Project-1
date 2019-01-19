@@ -1,5 +1,9 @@
 <h1>All items</h1>
 
 <% @items.each do |item| %>
-<h3><%= item.name %></h3>
+<h3><%=  link_to item.name, item_path(item) %></h3>
+
+<% if item.image.present? %>
+<img src="<%= item.image %>" alt="edit" class="thumb">
+<% end %>
 <% end %>

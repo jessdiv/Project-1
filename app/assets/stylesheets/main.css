@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
+
+body {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Staatliches', cursive;
+}
+
+nav {
+  background-color: #f55e55;
+  color: white;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.feature {
+  width: 40%;
+}
+
+.thumb {
+  width: 15em;
+}
+
+.form {
+  max-width: 600px;
+}
+
+.avatar {
+  height: 20%;
+  border-radius: 100%;
+}

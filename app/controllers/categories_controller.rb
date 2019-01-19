@@ -1,4 +1,8 @@
 class CategoriesController < ApplicationController
+  def index
+    @categories = Category.all
+  end
+
   def new
   end
 
@@ -8,6 +12,4 @@ class CategoriesController < ApplicationController
   def edit
   end
 
-  def destroy
-  end
 end
