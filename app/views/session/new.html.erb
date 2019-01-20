@@ -1,4 +1,8 @@
-<h1>Log into your account</h1>
+<h2>Log into your account</h2>
+
+<div class="form">
+
+<div class="label">
 
 <%= form_tag login_path do %>
 
@@ -13,6 +17,9 @@
 <% if flash[:error_message].present? %>
   <p><%= flash[:error_message] %></p>
 
+</div>
 <% end %>
 
 <% end %>
+
+</div>

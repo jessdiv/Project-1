@@ -1,5 +1,21 @@
 <h1>All Categories</h1>
 
+<div class="category">
+
 <% @categories.each do |category| %>
-<h3><%= category.name %></h3>
+<h2><%= category.name %></h2>
+<div class="categoryItem">
+
+<% category.items.each do |item| %>
+<h3><%= link_to item.name, item_path(item) %></h3>
+
+<% if item.image.present? %>
+<a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
+</div>
+
 <% end %>
+
+<% end %>
+
+<% end %>
+</div>

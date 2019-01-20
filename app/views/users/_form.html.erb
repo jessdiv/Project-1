@@ -1,26 +1,46 @@
+<div class="form">
+
 <%= form_for @user do |f| %>
 
-<%= f.label :name %>
+<div class="label">
+<%= f.label :name, 'Name: ' %>
 <%= f.text_field :name, :required => true %>
+</div>
 
-<%= f.label :username %>
+<div class="label">
+<%= f.label :username, 'Choose a username: ' %>
 <%= f.text_field :username, :require => true  %>
+</div>
 
-<%= f.label :email %>
+<div class="label">
+<%= f.label :email, 'Enter email: ' %>
 <%= f.email_field :email, :required => true %>
+</div>
 
-<%= f.label :image %>
+<div class="label">
+<%= f.label :image, 'Upload a pic: ' %>
 <%= f.text_field :image %>
+</div>
 
-<%= f.label :bio %>
+<div class="label">
+<%= f.label :bio, 'A bit about you: ' %>
 <%= f.text_area :bio %>
+</div>
 
+<div class="label">
 <%= f.label :password %>
 <%= f.password_field :password, :required => true %>
+</div>
 
+<div class="label">
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation, :required => true %>
+</div>
 
+<div class="label">
 <%= f.submit "Sign Up!" %>
+</div>
 
 <% end %>
+
+</div>

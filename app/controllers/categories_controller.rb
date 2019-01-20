@@ -3,13 +3,26 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def new
-  end
-
   def show
+    @category = Category.find params[:id]
+    @item = Item.all.order(:name)
   end
 
-  def edit
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new category_params
+    @category.save
+
+    redirect_to items_path
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name)
   end
 
 end

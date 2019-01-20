@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order(:name)
+    @categories = Category.all.order(:name)
   end
 
   def show
@@ -27,6 +28,12 @@ class ItemsController < ApplicationController
     item = Item.find params[:id]
     item.update item_params
     redirect_to item
+  end
+
+  def destroy
+    item = Item.find params[:id]
+    item.destroy
+    redirect_to items_path
   end
 
   private
