@@ -1,3 +1,28 @@
 
-
+<h1>Browse</h1>
 <h2><%= @category.name %></h2>
+
+<div class="browseproductContainer">
+
+<div class="browsecategorySidebar">
+
+<%= link_to 'All Categories', categories_path %>
+
+<% @categories.each do |category| %>
+<h4><%= link_to category.name, category_path(category.id)%></h4>
+<% end %>
+</div>
+
+<div class="allitems">
+
+<% @category.items.each do |i| %>
+
+<div class="listingwithimage">
+
+<h3><%= i.name %></h3>
+<p><%= image_tag i.image, :class => 'thumb' %></p>
+<% end %>
+</div>
+</div>
+</div>
+</div>
