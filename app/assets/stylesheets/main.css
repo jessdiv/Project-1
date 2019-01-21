@@ -87,17 +87,26 @@ nav h1 {
   color: #f55e55;
 }
 
+.browseContainer {
+  display: grid;
+  grid-template-columns: 15% auto;
 
-/* .category {
+}
+
+.browseSidebar {
+  display: inline-grid;
+  padding: 10px;
+}
+
+.itemsinCategory {
   display: grid;
   grid-gap: 25px;
   grid-template-columns: auto auto auto;
   justify-content: center;
 }
 
-.categoryItem {
+.eachItem {
   display: inline-grid;
-  border: solid black 2px;
-  height: 250px;
-  padding: 25px;
-} */
+  border: solid #ccc 2px;
+
+}

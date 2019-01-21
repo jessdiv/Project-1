@@ -2,27 +2,27 @@
 <h1>Browse</h1>
 <h2><%= @category.name %></h2>
 
-<div class="browseproductContainer">
+<div class="browseContainer">
 
-<div class="browsecategorySidebar">
+<div class="browseSidebar">
 
-<%= link_to 'All Categories', categories_path %>
+<%= link_to 'Browse all categories', categories_path %>
 
 <% @categories.each do |category| %>
 <h4><%= link_to category.name, category_path(category.id)%></h4>
 <% end %>
 </div>
 
-<div class="allitems">
+<div class="itemsinCategory">
+
 
 <% @category.items.each do |i| %>
 
-<div class="listingwithimage">
-
+<div class="eachItem">
 <h3><%= i.name %></h3>
-<p><%= image_tag i.image, :class => 'thumb' %></p>
+<a href="<%= item_path(i) %>"><img src="<%= i.image %>" alt="edit" class="thumb "></a>
 <% end %>
 </div>
 </div>
-</div>
+
 </div>
