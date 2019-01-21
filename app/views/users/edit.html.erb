@@ -1,3 +1,38 @@
 <h3>Edit Profile</h3>
 
-<%= render partial: "form" %>
+<div class="form">
+
+<%= form_for @user do |f| %>
+
+<div class="field">
+<%= f.label :name, 'Name: ' %>
+<%= f.text_field :name, :required => true %>
+</div>
+
+<div class="field">
+<%= f.label :username, 'Choose a username: ' %>
+<%= f.text_field :username, :require => true  %>
+</div>
+
+<div class="field">
+<%= f.label :email, 'Enter email: ' %>
+<%= f.email_field :email, :required => true %>
+</div>
+
+<div class="field">
+<%= f.label :image, 'Upload a pic: ' %>
+<%= f.text_field :image %>
+</div>
+
+<div class="field">
+<%= f.label :bio, 'A bit about you: ' %>
+<%= f.text_area :bio %>
+</div>
+
+<div class="field">
+<%= f.submit "Edit Profile!" %>
+</div>
+
+<% end %>
+
+</div>

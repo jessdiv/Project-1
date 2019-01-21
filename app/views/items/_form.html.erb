@@ -24,6 +24,6 @@
 <%= f.label :category_id %>
 <%= f.select :category_ids, Category.pluck(:name, :id), :include_blank => 'Please select', :multiple => true, :size => 5 %>
 
-<%= f.submit "Sign Up!" %>
+<%= f.submit "Submit" %>
 
 <% end %>

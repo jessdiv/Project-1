@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @item = Item.all
   end
 
   def new

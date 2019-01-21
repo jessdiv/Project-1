@@ -10,6 +10,47 @@
 </ol>
 <% end %>
 
-<%= render partial: "form" %>
+<%= form_for @user do |f| %>
+
+<div class="field">
+<%= f.label :name, 'Name: ' %>
+<%= f.text_field :name, :required => true %>
+</div>
+
+<div class="field">
+<%= f.label :username, 'Choose a username: ' %>
+<%= f.text_field :username, :require => true  %>
+</div>
+
+<div class="field">
+<%= f.label :email, 'Enter email: ' %>
+<%= f.email_field :email, :required => true %>
+</div>
+
+<div class="field">
+<%= f.label :image, 'Upload a pic: ' %>
+<%= f.text_field :image %>
+</div>
+
+<div class="field">
+<%= f.label :bio, 'A bit about you: ' %>
+<%= f.text_area :bio %>
+</div>
+
+<div class="field">
+<%= f.label :password %>
+<%= f.password_field :password, :required => true %>
+</div>
+
+<div class="field">
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, :required => true %>
+</div>
+
+<div class="field">
+<%= f.submit "Sign Up!" %>
+</div>
+
+<% end %>
 
 </div>

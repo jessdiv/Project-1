@@ -15,9 +15,9 @@
       <%= link_to 'Browse', items_path %> |
 
       <% if @current_user.present? %>
-      <%= link_to "Sign out ", login_path, :method => 'delete' %> |
       <%= link_to "View Profile", user_path(@current_user.id) %> |
-      <%= link_to "Add Item", new_item_path %>
+      <%= link_to "Add Item", new_item_path %> |
+      <%= link_to "Sign out ", login_path, :method => 'delete' %> |
       <% else %> |
         <%= link_to 'Sign up', new_user_path %> |
         <%= link_to 'Sign in', login_path %>
