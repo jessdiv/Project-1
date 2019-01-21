@@ -31,6 +31,8 @@ gem 'authenticate'
 
 gem 'rails_12factor', group: :production
 
+gem 'pg_search'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

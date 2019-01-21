@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
     <nav>
         <h1>Spearhead</h1>
       <%= link_to 'Home', root_path %> |
@@ -18,7 +19,7 @@
       <%= link_to "View Profile", user_path(@current_user.id) %> |
       <%= link_to "Add Item", new_item_path %> |
       <%= link_to "Sign out ", login_path, :method => 'delete' %> |
-      <% else %> |
+      <% else %>
         <%= link_to 'Sign up', new_user_path %> |
         <%= link_to 'Sign in', login_path %>
       <% end %>

@@ -37,7 +37,6 @@ nav h1 {
 .form {
   max-width: 600px;
   margin: auto;
-  border: solid #ccc 2px;
 }
 
 .form .field {
@@ -108,5 +107,4 @@ nav h1 {
 .eachItem {
   display: inline-grid;
   border: solid #ccc 2px;
-
 }

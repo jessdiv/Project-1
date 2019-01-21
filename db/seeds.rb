@@ -26,6 +26,11 @@ c5 = Category.create :name => 'audio'
 c6 = Category.create :name => 'lighting'
 c7 = Category.create :name => 'studio'
 
+Order.destroy_all
+o1 = Order.create :start => '1/2/19', :end => '8/2/19'
+o2 = Order.create :start => '10/2/19', :end => '10/3/19'
+o3 = Order.create :start => '3/2/19', :end => '4/2/19'
+
 # Associations #######################
 
 # users and items
@@ -40,3 +45,13 @@ i1.categories << c1 << c4 << c2
 i2.categories << c1 << c4 << c5
 i3.categories << c1 << c4 << c6
 i4.categories << c6 << c7
+
+# orders and items
+o1.items << i1 << i2
+o2.items << i2 << i3
+o3.items << i4
+
+# users and orders
+u1.orders << o1
+u2.orders << o1 << o2
+u3.orders << o3
