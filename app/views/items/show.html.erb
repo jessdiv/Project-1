@@ -8,13 +8,18 @@
 <h3>Prices</h3>
 <p>Day: <%= number_to_currency @item.dayprice  %></p>
 <p>Week: <%= number_to_currency @item.weekprice  %></p>
-<p>Month: <%= number_to_currency @item.monthprice %></p
+<p>Month: <%= number_to_currency @item.monthprice %></p>
+
+
+<!-- Display either link to profile or edit/remove functions-->
 
 <% if @current_user != @item.user %>
-<p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
-<% end %>
 
-<% if @current_user == @item.user %>
+<%= button_to 'Hire now!', orders_new_path %>
+
+<p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
+<% elsif %>
+<% @current_user == @item.user %>
 <p><%= link_to 'Edit Item', edit_item_path %></p>
 <p><%= link_to 'Remove Item', user_path%></p>
 <% end %>

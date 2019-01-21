@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create, :show, :edit, :update]
   resources :items
   resources :categories
+  resources :orders
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
