@@ -1,4 +1,10 @@
 <% if @current_user.present? %>
-<h1>My Orders</h1>
+<h1>CART</h1>
+<h4><%= @current_user.orders.last.id %>. <%= @current_user.orders.last.start %> - <%= @current_user.orders.last.end %></h4>
+
+<p>Items in cart:</p>
+<% @current_user.orders.last.items.each do |item| %>
+<p><%= item.name %></p>
+<% end %>
 
 <% end %>

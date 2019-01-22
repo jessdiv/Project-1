@@ -48,8 +48,8 @@ i4.categories << c6 << c7
 
 # orders and items
 o1.items << i1 << i2
-o2.items << i2 << i3
-o3.items << i4
+o2.items << i2 << i4
+o3.items << i3
 
 # users and orders
 

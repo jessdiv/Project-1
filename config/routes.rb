@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :orders
 
-  post '/items/:id/add_to_cart' => 'orders#add_to_cart'
+  post '/items/:id/add_to_cart' => 'orders#add_to_cart', :as => 'add_to_cart'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

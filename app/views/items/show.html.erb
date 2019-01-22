@@ -10,18 +10,19 @@
 <p>Week: <%= number_to_currency @item.weekprice  %></p>
 <p>Month: <%= number_to_currency @item.monthprice %></p>
 
-
-<!-- Display either link to profile or edit/remove functions-->
+<!-- form to fill out dates to add item to order -->
 
 <% if @current_user != @item.user %>
 
-  <%=  link_to 'Hire now!', new_order_path(:item_id => @item.id) %>
+<%=  link_to 'Hire now!', new_order_path(:item_id => @item.id) %>
+
+<!-- Display either link to profile or edit/remove functions-->
 
   <p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
   <% elsif %>
   <% @current_user == @item.user %>
     <p><%= link_to 'Edit Item', edit_item_path %></p>
-    <p><%= link_to 'Remove Item', user_path%></p>
+    <p><%= link_to 'Remove Item', item_path(@item.id), :method => 'delete', :data => {:confirm => 'Are you sure you want to remove this item?'}%></p>
 <% end %>
 
 <p>Catgeories:

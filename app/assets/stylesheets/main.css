@@ -50,8 +50,6 @@ nav h1 {
 }
 
 .allitems {
-  /* max-width: 960px;
-  margin: auto; */
   display: grid;
   grid-gap: 25px;
   grid-template-columns: auto auto auto;

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       profile.image = req["public_id"]
       profile.save
-    end 
+    end
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
@@ -30,6 +30,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find params[:id]
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      profile.image = req["public_id"]
+    end
   end
 
   def update
