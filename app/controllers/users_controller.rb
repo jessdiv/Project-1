@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
     @item = Item.all
+    @order = Order.all
   end
 
   def new
@@ -14,6 +15,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      profile.image = req["public_id"]
+      profile.save
+    end 
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path

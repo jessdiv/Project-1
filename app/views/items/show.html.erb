@@ -2,7 +2,7 @@
 
 <% if @item.image.present? %>
 
-<p><%= image_tag @item.image, :class => 'feature' %></p>
+<p><%= cl_image_tag @item.image, :class => 'feature' %></p>
 <% end %>
 
 <h3>Prices</h3>
@@ -15,13 +15,13 @@
 
 <% if @current_user != @item.user %>
 
-<%= button_to 'Hire now!', orders_new_path %>
+  <%=  link_to 'Hire now!', new_order_path(:item_id => @item.id) %>
 
-<p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
-<% elsif %>
-<% @current_user == @item.user %>
-<p><%= link_to 'Edit Item', edit_item_path %></p>
-<p><%= link_to 'Remove Item', user_path%></p>
+  <p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
+  <% elsif %>
+  <% @current_user == @item.user %>
+    <p><%= link_to 'Edit Item', edit_item_path %></p>
+    <p><%= link_to 'Remove Item', user_path%></p>
 <% end %>
 
 <p>Catgeories:

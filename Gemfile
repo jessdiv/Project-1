@@ -33,6 +33,16 @@ gem 'rails_12factor', group: :production
 
 gem 'pg_search'
 
+gem 'bootstrap'
+
+gem 'jquery-rails'
+
+gem 'cloudinary'
+
+gem 'spree'
+gem 'spree_auth_devise'
+gem 'spree_gateway'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

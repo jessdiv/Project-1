@@ -52,6 +52,9 @@ o2.items << i2 << i3
 o3.items << i4
 
 # users and orders
-u1.orders << o1
+
 u2.orders << o1 << o2
 u3.orders << o3
+
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)

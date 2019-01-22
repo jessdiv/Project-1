@@ -7,6 +7,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find params[:id]
+    @order = Order.all
+    @item.save
   end
 
   def new
@@ -14,10 +16,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new item_params
-    @item.save
+    item = Item.new item_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      item.image = req["public_id"]
+      item.save
+    end
 
-    redirect_to item_path
+    redirect_to item
   end
 
   def edit
@@ -26,7 +32,12 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find params[:id]
-    item.update item_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      item.image = req["public_id"]
+    end
+    item.update_attributes item_params
+    item.save
     redirect_to item
   end
 
