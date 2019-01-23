@@ -1,11 +1,11 @@
-<h2><%= @item.name %></h2>
+<h3><%= @item.name %></h3>
 
 <% if @item.image.present? %>
 
 <p><%= cl_image_tag @item.image, :class => 'feature' %></p>
 <% end %>
 
-<h3>Prices</h3>
+<h5>Prices</h5>
 <p>Day: <%= number_to_currency @item.dayprice  %></p>
 <p>Week: <%= number_to_currency @item.weekprice  %></p>
 <p>Month: <%= number_to_currency @item.monthprice %></p>
@@ -18,7 +18,9 @@
 
 <!-- Display either link to profile or edit/remove functions-->
 
-  <p>Find out more about the renter: <%= link_to @item.user.username, user_path(@item.user.id) %></p>
+  <p>Find out more about the renter:
+    <%# <%= link_to @item.user.username, user_path(@item.user.id) %> %>
+  </p>
   <% elsif %>
   <% @current_user == @item.user %>
     <p><%= link_to 'Edit Item', edit_item_path %></p>

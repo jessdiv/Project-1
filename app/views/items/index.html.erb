@@ -1,15 +1,15 @@
 
-<h1>All products</h1>
+<h3>All items</h3>
 <!-- loops through all the  -->
+<div class='row'>
 <% @items.each do |item| %>
-<div class="col-sm col-sm col-sm">
+<div class="col-md-4">
 <h3><%=  link_to item.name, item_path(item) %></h3>
 
 <% if item.image.present? %>
 <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
 </div>
+
 <% end %>
 <% end %>
-</div>
-</div>
 </div>

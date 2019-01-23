@@ -95,8 +95,10 @@ body {
   text-align: center;
 }
 
-h1, h2, h3 {
-
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: MISTYROSE;
+  text-shadow: 1px 1px #ff0000;
 }
 
 .feature {
@@ -104,7 +106,7 @@ h1, h2, h3 {
 }
 
 .thumb {
-  width: 15em;
+  max-width: 20em;
 }
 
 .avatar {
@@ -116,10 +118,39 @@ h1, h2, h3 {
   margin: 10px;
   padding: 15px;
   border-radius: 0.5em;
-  background-color: indianred;
+  border: solid black 1px;
 }
 
 .homepagebox {
   display: flex;
   flex-direction: row;
+}
+
+[class*="col-"] {
+  margin-bottom: 30px;
+}
+
+body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url('background-image.jpg');
+
+  /* Half height */
+  height: 50%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sub-heading {
+  padding: 20px;
+}
+
+.item-box {
+  border-radius: 1em;
+  box-shadow: 2px 5px #ccc;
 }

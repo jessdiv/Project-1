@@ -16,6 +16,32 @@ i1 = Item.create :name => 'Sony FS7', :dayprice => 150, :weekprice => 600, :mont
 i2 = Item.create :name => 'Canon C300', :dayprice => 100, :weekprice => 500, :monthprice => 1600, :brand => 'Canon', :description => 'Comes with lenses and mics', :image => 'http://www.llsr.com/wp-content/uploads/2015/06/IMAGE_C300MKII_04_BI.jpg'
 i3 = Item.create :name => 'Sony Alpha a7s', :dayprice => 200, :weekprice => 700, :monthprice => 2200, :description => 'Great cam', :image => 'https://s.aolcdn.com/hss/storage/midas/bf981d86dc4164477a2555647f9650ea/202616839/sony-alpha-a7s-ii-2015-09-11-01.jpg'
 i4 = Item.create :name => 'Shoot Studio', :dayprice => 1200, :weekprice => 6000, :monthprice => 18000, :brand => 'Sony', :description => 'Awesome location with lights included', :image => 'http://foreverphotographychicago.com/wp-content/uploads/2014/11/studio-shoot.jpg'
+i5 =
+i6 =
+i7 =
+i8 =
+i9 =
+i10 =
+i11 =
+i12 =
+i13 =
+i14 =
+i15 =
+i16 =
+i17 =
+i18 =
+i19 =
+i20 =
+i21 =
+i22 =
+i23 =
+i24 =
+i25 =
+i26 =
+i27 =
+i28 =
+i29 = 
+i30 =
 
 Category.destroy_all
 c1 = Category.create :name => 'camera'

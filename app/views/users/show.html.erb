@@ -1,19 +1,18 @@
 <!-- Display user profile info -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
+
     <h2><%= @user.username %></h2>
     <h3><%= @user.suburb %> <%= @user.city %></h3>
     <% if @user.image.present? %>
     <img src="<%= @user.image %>" alt="" class="avatar">
     <% end %>
     <p><%= @user.bio %></p>
-    </div>
 
 <!-- Display items associated with the user -->
-    <div class="col-sm">
+
     <% if @current_user == @user %>
     <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
+
+
     <h3>My items</h3>
     <% else %>
     <h3>Items by this user</h3>
@@ -23,21 +22,25 @@
     <h4><%= item.name %></h4>
     <p><%= link_to (image_tag item.image, :class => 'thumb'), item_path(item)%></p>
     <% end %>
-    </div>
-<!-- Display orders associated with a user -->
-    <div class="col-sm">
-    <% if @current_user == @user && @current_user.orders.present? %>
 
+<!-- Display orders associated with a user -->
+<% if !@current_user.orders.last.start.present? %>
+  <p> Make your first order by adding something to your cart. </p>
+<% elsif %>
+    <% @current_user == @user%>
+<div class="container">
     <h3><%= link_to 'My Orders', orders_path %></h3>
+    <div class="row">
     <% @current_user.orders.each do |order| %>
+    <div class="col-md-3 item-box">
     <p><%= order.id %>. Start: <%= order.start%></p>
     <p>End: <%= order.end%></p>
     <% order.items.each do |item| %>
-    <%= item.name %></p>
+    <p><%= item.name %></p>
     <% end %>
+    </div>
 
     <% end %>
     <% end %>
     </div>
-</div>
 </div>

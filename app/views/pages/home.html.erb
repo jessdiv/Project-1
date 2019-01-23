@@ -1,28 +1,23 @@
-<div class="container">
-  <p>Spearhead is changing the way you rent camera gear.</p>
-<!-- <div class="row">
-<div class="col-sm home-icon">
-<h3>No more rental houses</h3>
+
+  <div class="bg"></div>
+
+  <p class="py-5 text-center">Spearhead is changing the way you rent camera gear.</p>
+
+  <h5><%= link_to 'Get started', new_user_path%></h5>
+
+  <h1 class='sub-heading'>All products</h1>
+  <!-- loops through all the  -->
+  <div class="container">
+  <div class='row'>
+  <% @items.each do |item| %>
+  <div class="col-md-4 item-box">
+  <h3><%=  link_to item.name, item_path(item) %></h3>
+
+  <% if item.image.present? %>
+  <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
   </div>
-  <div class="col-sm home-icon">
-<h3>No more outrageous pricing</h3>
+
+  <% end %>
+  <% end %>
+  </div>
 </div>
-<div class="col-sm home-icon">
-<h3>No more bullshit</h3>
-</div>
-</div>
-<div class="row">
-<div class="container"> -->
-
-<h1>/////////////// SEARCH BAR /////////////////</h1>
-
-<% @items.each do |item| %>
-
-
-<h3><%=  link_to item.name, item_path(item) %></h3>
-
-<% if item.image.present? %>
-<a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
-
-<% end %>
-<% end %>
