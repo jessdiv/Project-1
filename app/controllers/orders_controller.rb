@@ -8,8 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    item = Item.find params[:item_id]
-    order = Order.find params[:item_id]
+    # item = Item.find params[:item_id]
+    #order = Order.find params[:item_id]
     add_to_cart
   end
 
