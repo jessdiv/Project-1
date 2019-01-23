@@ -1,26 +1,18 @@
+<h4>Spearhead is changing the way you rent camera gear.</h4>
+<h4>No more rental houses</h4>
+<h4>No more outrageous pricing</h4>
+<h4>No more bullshit</h4>
+
+
 <h1>All products</h1>
-
-<div class="productContainer">
-
-<div class="categorySidebar">
-
-<%= link_to 'All Categories', categories_path %>
-
-<% @categories.each do |category| %>
-<h4><%= link_to category.name, category_path(category.id)%></h4>
-<% end %>
-</div>
-
-<div class="allitems">
+<!-- loops through all the  -->
 
 <% @items.each do |item| %>
-<div class="griditem">
+
 <h3><%=  link_to item.name, item_path(item) %></h3>
 
 <% if item.image.present? %>
 <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
-</div>
+
 <% end %>
 <% end %>
-</div>
-</div>

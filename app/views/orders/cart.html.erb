@@ -1,0 +1,15 @@
+<% if @current_user.present? %>
+<h1>CART</h1>
+<h4><%= @current_user.orders.last.id %>. <%= @current_user.orders.last.start %> - <%= @current_user.orders.last.end %></h4>
+
+<p>Items in cart:</p>
+<% @current_user.orders.last.items.each do |item| %>
+<p><%= item.name %></p>
+<% end %>
+
+<%= link_to 'Add more items', items_path %>
+
+<%= link_to 'Edit order', new_order_path %>
+<%= link_to 'Complete order', complete_order_path %>
+
+<% end %>

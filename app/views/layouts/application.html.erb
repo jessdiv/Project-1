@@ -23,7 +23,7 @@
             <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<%= items_path %>">Browse</a>
+            <a class="nav-link" href="<%= categories_path %>">Browse</a>
           </li>
 
           <% if @current_user.present? %>
@@ -48,7 +48,7 @@
         </ul>
       </div>
     </nav>
-
+<h2>Peer to peer camera gear rental.</h2>
     <% if @current_user.present? %>
         <p>Hello, <%= @current_user.username %> </p>
         <% end %>

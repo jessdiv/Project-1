@@ -1,5 +1,15 @@
 <h1>All Categories</h1>
 
+<!-- loops through all the categories, prints them and links them to the category show -->
+
+<%= link_to 'All Categories', categories_path %>
+
+<% @categories.each do |category| %>
+
+<h4><%= link_to category.name, category_path(category.id)%></h4>
+<% end %>
+
+
 <div class="category">
 
 <% @categories.each do |category| %>

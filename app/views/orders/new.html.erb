@@ -1,6 +1,6 @@
 <h1>Make an order</h1>
 
-<%= form_for add_to_cart_path do |f| %>
+<%= form_for @current_user.orders.last do |f| %>
 
 <%= f.label :start, 'Start date: ' %>
 <%= f.date_field :start, :required => true %>

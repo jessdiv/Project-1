@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
+/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
 
-body {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-}
-
-h1, h2, h3 {
-  font-family: 'Staatliches', cursive;
-}
 
 nav {
   background-color: #f55e55;
@@ -26,14 +18,6 @@ nav h1 {
   padding: 0;
 }
 
-.feature {
-  width: 40%;
-}
-
-.thumb {
-  width: 15em;
-}
-
 .form {
   max-width: 600px;
   margin: auto;
@@ -44,10 +28,6 @@ nav h1 {
   padding: 15px;
 }
 
-.avatar {
-  height: 200px;
-  border-radius: 100%;
-}
 
 .allitems {
   display: grid;
@@ -87,7 +67,6 @@ nav h1 {
 .browseContainer {
   display: grid;
   grid-template-columns: 15% auto;
-
 }
 
 .browseSidebar {
@@ -105,4 +84,27 @@ nav h1 {
 .eachItem {
   display: inline-grid;
   border: solid #ccc 2px;
+} */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
+
+body {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Staatliches', cursive;
+}
+
+.feature {
+  width: 40%;
+}
+
+.thumb {
+  width: 15em;
+}
+
+.avatar {
+  height: 200px;
+  border-radius: 100%;
 }

@@ -1,14 +1,15 @@
-<% if @current_user.present?%>
-
-
+<% if @current_user.present? %>
 
     <h1>My Orders</h1>
 
     <% @current_user.orders.each do |order| %>
-        <p>Order #<%= order.id %> - <strong>Pick up: </strong> <%= order.start%></p>
+        <p>Order #<%= link_to order.id, order %> - <strong>Pick up: </strong> <%= order.start%></p>
         <p><strong> Drop off by: </strong><%= order.end%></p>
+        <p>Items:</p>
     <% order.items.each do |item| %>
-    <%= item.name %></p>
+    <ul>
+        <li><%= item.name %></li>
+    </ul>
     <% end %>
     <% end %>
 
