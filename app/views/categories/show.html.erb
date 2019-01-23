@@ -1,28 +1,28 @@
 
-<h1>Browse</h1>
+<h3>Browse</h3>
+<div class="col-md-12">
+
+  <%= link_to 'All Categories', categories_path %>
+
+  <% @categories.each do |category| %>
+
+  <%= link_to category.name, category_path(category.id)%> |
+  <% end %>
+</div>
+
 <h2><%= @category.name %></h2>
 
-<div class="browseContainer">
+<div class="container">
 
-<div class="browseSidebar">
+  <div class="row">
+    <% @category.items.each do |i| %>
 
-<%= link_to 'Browse all categories', categories_path %>
+      <div class="col-md-4 item-box">
+        <h3><%= i.name %></h3>
+        <a href="<%= item_path(i) %>"><img src="<%= i.image %>" alt="edit" class="thumb "></a>
+        </div>
+        <% end %>
 
-<% @categories.each do |category| %>
-<h4><%= link_to category.name, category_path(category.id)%></h4>
-<% end %>
-</div>
-
-<div class="itemsinCategory">
-
-
-<% @category.items.each do |i| %>
-
-<div class="eachItem">
-<h3><%= i.name %></h3>
-<a href="<%= item_path(i) %>"><img src="<%= i.image %>" alt="edit" class="thumb "></a>
-<% end %>
-</div>
-</div>
+  </div>
 
 </div>

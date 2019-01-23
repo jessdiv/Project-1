@@ -1,9 +1,10 @@
 
 <h3>All items</h3>
 <!-- loops through all the  -->
+<div class="container">
 <div class='row'>
 <% @items.each do |item| %>
-<div class="col-md-4">
+<div class="col-md-4 item-box">
 <h3><%=  link_to item.name, item_path(item) %></h3>
 
 <% if item.image.present? %>
@@ -12,4 +13,5 @@
 
 <% end %>
 <% end %>
+</div>
 </div>

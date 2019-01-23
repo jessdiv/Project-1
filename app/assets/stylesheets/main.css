@@ -154,3 +154,9 @@ body, html {
   border-radius: 1em;
   box-shadow: 2px 5px #ccc;
 }
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
