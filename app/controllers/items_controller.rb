@@ -7,7 +7,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find params[:id]
-    @order = @current_user.orders.last
+    if @current_user.present?
+      @order = @current_user.orders.last
+    else
+      redirect_to login_path
+    end
   end
 
   def new

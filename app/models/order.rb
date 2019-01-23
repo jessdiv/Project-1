@@ -15,10 +15,15 @@ class Order < ApplicationRecord
   has_and_belongs_to_many :items
 
   def calculate_price
-    order_length = (self.end - self.start).to_i
+    # order_length = (self.end - self.start).to_i
+
     totalprice = 0
 
     self.items.each do |item|
+      puts "item: #{item}"
+      
+      order_length = (self.end - self.start).to_i
+      puts "order_length: #{order_length}"
 
       @prices = {
           30 => item.monthprice,
@@ -27,12 +32,15 @@ class Order < ApplicationRecord
         }
 
       @prices.each do |key, value|
+        puts "=======key:#{key}, value:#{value}======"
         while order_length >= key
+          puts "#{order_length} and #{key}"
             totalprice += value
+            puts "totalprice: #{totalprice}"
             order_length -= key
-        end
-      end
-    end
+        end #while
+      end #prices.each
+    end #self.items
     totalprice
-  end
+  end #calculate_price
 end
