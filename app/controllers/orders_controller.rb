@@ -13,6 +13,9 @@ class OrdersController < ApplicationController
     add_to_cart
   end
 
+  def cart
+  end
+
   def update
     order = Order.find params[:id]
     order.update order_params
@@ -24,6 +27,29 @@ class OrdersController < ApplicationController
     item = Item.find params[:item_id]
     @current_user.orders.last.items << item
     # redirect_to order_path(@current_user.orders.last)
+  end
+
+  def calculate_price
+
+    order = Order.find params[:id]
+    start_date = Order.find params[:start]
+    end_date = Order.find params[:end]
+
+    subtotal = 0
+
+    if (end_date - start_date).to_i > 7
+      pricing = month
+    elsif (end_date - start_date).to_i > 2
+      pricing = week
+    elsif (end_date - start_date).to_i >= 0
+      pricing = day
+    end
+
+    order.items.each |item|
+  
+
+    sum += item.pricing
+
   end
 
   def complete_order

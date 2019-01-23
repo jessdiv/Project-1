@@ -39,12 +39,6 @@ class ItemsController < ApplicationController
     redirect_to item
   end
 
-  def add_item_to_order
-    item = Item.find params[:id]
-    @order = @current_user.orders.last
-    order << item
-  end
-
   def destroy
     @item = Item.find params[:id]
     @item.destroy

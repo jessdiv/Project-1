@@ -1,4 +1,4 @@
-<% if @current_user.present? %>
+<% if @current_user.present?%>
 
     <h1>My Orders</h1>
 
@@ -7,16 +7,13 @@
         <p><strong> Drop off by: </strong><%= order.end%></p>
         <p>Items:</p>
     <% order.items.each do |item| %>
-    <ul>
-        <li><%= item.name %></li>
-    </ul>
+        <p><%= item.name %></p>
     <% end %>
     <% end %>
 
 <!-- link to log in or sign up before viewing orders-->
 <% end %>
 
-<% if !@current_user.present?%>
+<% if !@current_user.present? %>
 <h4>Not signed in? <%= link_to 'Sign in', login_path %> or <%= link_to 'Sign up ', new_user_path %> to see your orders. </h4>
-<!-- end of if user present -->
-<% end %>
+<% end %><!-- end of if user present -->
