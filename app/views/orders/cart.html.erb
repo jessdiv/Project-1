@@ -7,7 +7,7 @@
 <p><%= item.name %></p>
 <% end %>
 
-<h4>Total Price: </h4>
+<h4>Total Price: <%= @current_user.orders.last.calculate_price %></h4>
 
 <%= link_to 'Add more items', items_path %>
 
