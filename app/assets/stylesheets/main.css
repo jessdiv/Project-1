@@ -85,3 +85,20 @@ body, html {
 .cartbox {
   /* border: solid black 1px; */
 }
+
+.addcart {
+  font-size: 2rem;
+}
+
+.container a {
+  color: #4682B4 !important;
+}
+
+.container .browse-links {
+  color: navy !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: navy !important;
+}

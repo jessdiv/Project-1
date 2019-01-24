@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
   def complete_order
     @current_user.orders.last.update :status => 'complete'
     @current_user.orders.create
-    redirect_to orders_path
+    redirect_to order_path
   end
 
   def destroy

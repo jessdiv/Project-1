@@ -37,7 +37,4 @@ class Order < ApplicationRecord
     totalprice
   end #calculate_price
 
-  def past
-
-  end
 end
