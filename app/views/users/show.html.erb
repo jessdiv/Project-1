@@ -1,12 +1,13 @@
 <!-- Display user profile info -->
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2><%= @user.username %></h2>
-        <h3><%= @user.suburb %>, <%= @user.city %></h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2><%= @user.username %></h2>
+          <h5><%= @user.suburb %>, <%= @user.city %></h5>
         </div>
-
       </div>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <% if @user.image.present? %>
@@ -29,4 +30,3 @@
     <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
   </div>
     <% end %>
-<!-- SPLIT ONTO SEPARATE PAGES ############################### -->

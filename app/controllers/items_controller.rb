@@ -20,12 +20,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new item_params
+    @item.user_id = @current_user.id
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       @item.image = req["public_id"]
       @item.save
     end
-    redirect_to @item
+    redirect_to items_path
   end
 
   def edit

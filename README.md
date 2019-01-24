@@ -5,8 +5,10 @@ Spearhead is a peer to peer camera gear rental platform. This project was bulit 
 ## Built With
 
 - Ruby on Rails
+- PostgresSQL - database
 - Bootstrap - Styling framework
 - Heroku - deployment
+
 
 ## Gems used
 
@@ -19,7 +21,6 @@ Spearhead is a peer to peer camera gear rental platform. This project was bulit 
 
 ## Known bugs
 
-- Problems saving uploaded photos to profile/listing.
 - Can't edit the current cart.
 - Can only add one category to a listing
 
