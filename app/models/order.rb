@@ -43,4 +43,8 @@ class Order < ApplicationRecord
     end #self.items
     totalprice
   end #calculate_price
+
+  def past
+    
+  end
 end

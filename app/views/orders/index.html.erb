@@ -2,47 +2,49 @@
 <% if @current_user.present? && @current_user.orders.present? %>
   <h2>My Orders</h2>
   <div class="container">
-          <% @current_user.orders.each do |order| %>
-          <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                  <p><%= link_to 'Order No: ', order_path(order) %>  </p>
+
+          <% @orders_array.each do |order| %>
+              <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                      <p><%= link_to 'Order No: ', order_path(order) %>  </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%= link_to order.id, order_path(order) %></p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <p><%= link_to order.id, order_path(order) %></p>
+                <div class="row">
+                    <div class="col-md-6">
+                      <p>Pick up:  </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%= order.start %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                  <p>Pick up:  </p>
+                <div class="row">
+                    <div class="col-md-6">
+                      <p>Drop off:  </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%= order.end %></p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <p><%= order.start %></p>
+                <div class="row" style="background-color: #F5F5F5;">
+                    <div class="col-md-6">
+                      <p>Total Price:  </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%= number_to_currency order.calculate_price %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                  <p>Drop off:  </p>
+                <div class="row">
+                  <div class="col-md-12">
+                  <%= '--' * 20 %>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <p><%= order.end %></p>
-                </div>
-            </div>
-            <div class="row" style="background-color: #F5F5F5;">
-                <div class="col-md-6">
-                  <p>Total Price:  </p>
-                </div>
-                <div class="col-md-6">
-                  <p><%= number_to_currency order.calculate_price %></p>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-              <%= '--' * 20 %>
               </div>
-            </div>
           </div>
-      </div>
+
       <% end %>
   <% end %>
 

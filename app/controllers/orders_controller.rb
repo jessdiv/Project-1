@@ -1,7 +1,16 @@
 class OrdersController < ApplicationController
   require 'time'
   def index
-    @orders = Order.all.order(:start)
+    # @orders = Order.all.order(:start)
+    @orders_array = []
+    orders = @current_user.orders
+    orders.each do |order|
+      unless order.start == nil
+        @orders_array << order
+      end
+    end
+    @orders_array = @orders_array.reverse
+    # raise 'hell'
   end
 
   def show
