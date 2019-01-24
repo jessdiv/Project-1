@@ -51,11 +51,11 @@
     <!-- Display either link to profile or edit/remove functions-->
     <div class="container">
       <p>Find out more about the renter:
-      <%= link_to @current_user.username, user_path(@current_user.id) %>
+      <%= link_to @item.user.username, user_path(@item.user.id) %>
       </p>
 
       <% elsif %>
-      <% @current_user == @item.user %>
+      <% @current_user.id == @item.user_ %>
         <p><%= link_to 'Edit Item', edit_item_path %></p>
         <p><%= link_to 'Remove Item', item_path(@item.id), :method => 'delete', :data => {:confirm => 'Are you sure you want to remove this item?'}%></p>
     <% end %>
