@@ -20,7 +20,6 @@
 
 class User < ApplicationRecord
   after_create :create_cart
-  Authenticate::User
   has_secure_password
   has_many :items
   has_many :categories, :through => :items
