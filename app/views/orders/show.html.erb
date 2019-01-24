@@ -1,1 +1,40 @@
 
+<div class="container">
+  <h3>Order No. <%= @order.id %></h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <p>Pick up:  </p>
+      </div>
+      <div class="col-md">
+        <p><%= @order.start %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <p>Drop off: </p>
+      </div>
+      <div class="col-md">
+        <p><%= @order.end %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <p>Items:  </p>
+      </div>
+      <div class="col-md">
+        <% @order.items.each do |item| %>
+        <%= item.name %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <p>Total price: </p>
+      </div>
+      <div class="col-md">
+        <p><%= number_to_currency @order.calculate_price %></p>
+      </div>
+    </div>
+  </div>
+</div>

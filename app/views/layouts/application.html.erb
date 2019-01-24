@@ -37,10 +37,11 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="<%= user_path(@current_user.id) %>">View Profile</a>
                 <a class="dropdown-item" href="<%= cart_path(@current_user.orders.last.id) %>">View Cart</a>
+                <a class="dropdown-item" href="<%= orders_path %>">My Orders</a>
+                <a class="dropdown-item" href="#">My Items</a>
                 <a class="dropdown-item" href="<%= new_item_path %>">Add item</a>
                 <div class="dropdown-divider"></div>
-
-                <a class="dropdown-item" href="<%= login_path%>" method="delete"> Sign out</a>
+                <%= link_to "Sign out", login_path, :method => 'delete', :class => 'dropdown-item'%>
               </div>
           </li>
 

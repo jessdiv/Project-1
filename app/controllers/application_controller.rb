@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  require 'time'
+
   before_action :fetch_user
 
   private

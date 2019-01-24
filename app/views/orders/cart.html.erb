@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row"></div>
     <% if @current_user.present? %>
-    <h2>CART</h2>
+    <h2>Cart</h2>
     <div class="container">
       <div class="row">
         <div class="col-md">
@@ -50,16 +50,30 @@
           </div>
         </div>
 
+    <div class="container">
+      <div class="row">
+        <% if @current_user.orders.last.items.present? && @current_user.orders.last.start.present? %>
+          <div class="col-md-3"></div>
+          <div class="col-md-3">
+            <p><%= link_to 'Add more items', items_path %></p>
+          </div>
+          <!-- DISABLED AS NOT WORKING -->
+          <!-- <div class="col-md-2">
 
-    <% if @current_user.orders.last.items.present? && @current_user.orders.last.start.present? %>
-      <%= link_to 'Add more items', items_path %>
-      <%= link_to 'Edit order', new_order_path %>
-      <%= link_to 'Complete order', complete_order_path %>
-    <% else %>
-      <%= link_to 'Add an item', items_path %>
+           <p><%= link_to 'Edit order', new_order_path %></p>
+          </div> -->
+          <div class="col-md-3">
+            <p><%= link_to 'Complete order', complete_order_path %></p>
+          </div>
+          <div class="col-md-3"></div>
+        <% else %>
+          <%= link_to 'Add an item', items_path %>
 
-    <% end %>
-    <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
     </div>
   </div>
 </div>

@@ -3,16 +3,26 @@
     <h2><%= @user.username %></h2>
     <h3><%= @user.suburb %> <%= @user.city %></h3>
     <% if @user.image.present? %>
-    <img src="<%= @user.image %>" alt="" class="avatar">
+    <%= cl_image_tag @user.image, :class => 'avatar' %>
     <% end %>
-    <p><%= @user.bio %></p>
+    <div class="row">
+      <div class="col-md-4"></div>
 
+    <div class="col-md-4">
+    <p><%= @user.bio %></p>
+    </div>
+
+    <div class="col-md-4"></div>
+    </div>
 <!-- Display items associated with the user -->
 
     <% if @current_user == @user %>
     <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
 </div>
-<div class="container">
+
+<!-- SPLIT ONTO SEPARATE PAGES ############################### -->
+
+<!-- <div class="container">
     <h3>My items</h3>
     <% else %>
     <h3>Items by this user</h3>
@@ -21,12 +31,13 @@
     <% @user.items.each do |item| %>
     <div class="col-md-3">
     <h4><%= item.name %></h4>
-    <p><%= link_to (image_tag item.image, :class => 'thumb'), item_path(item)%></p>
+    <%# <p><%= link_to (image_tag item.image, :class => 'thumb'), item_path(item)%></p> %>
     </div>
     <% end %>
   </div>
   </div>
 <!-- Display orders associated with a user -->
+<!--
 <% if !@current_user.orders.last.start.present? %>
   <p> Make your first order by adding something to your cart. </p>
 <% elsif %>
@@ -46,4 +57,4 @@
     <% end %>
     <% end %>
     </div>
-</div>
+</div> -->

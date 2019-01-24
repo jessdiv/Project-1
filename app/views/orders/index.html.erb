@@ -1,19 +1,57 @@
-<% if @current_user.present? %>
+<div class="container">
+<% if @current_user.present? && @current_user.orders.present? %>
+  <h2>My Orders</h2>
+  <div class="container">
+          <% @current_user.orders.each do |order| %>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                  <p><%= link_to 'Order No: ', order_path(order) %>  </p>
+                </div>
+                <div class="col-md-6">
+                  <p><%= link_to order.id, order_path(order) %></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <p>Pick up:  </p>
+                </div>
+                <div class="col-md-6">
+                  <p><%= order.start %></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <p>Drop off:  </p>
+                </div>
+                <div class="col-md-6">
+                  <p><%= order.end %></p>
+                </div>
+            </div>
+            <div class="row" style="background-color: #F5F5F5;">
+                <div class="col-md-6">
+                  <p>Total Price:  </p>
+                </div>
+                <div class="col-md-6">
+                  <p><%= number_to_currency order.calculate_price %></p>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+              <%= '--' * 20 %>
+              </div>
+            </div>
+          </div>
+      </div>
+      <% end %>
+  <% end %>
 
-    <h1>My Orders</h1>
+  <% if !@current_user.present?%>
+          <h4>Not signed in? <%= link_to 'Sign in', login_path %> or <%= link_to 'Sign up ', new_user_path %> to see your orders. </h4>
+    <% end %><!-- end of if user not present -->
 
-    <% @current_user.orders.each do |order| %>
-        <p>Order #<%= link_to order.id, order %> - <strong>Pick up: </strong> <%= order.start%></p>
-        <p><strong> Drop off by: </strong><%= order.end%></p>
-        <p>Items:</p>
-    <% order.items.each do |item| %>
-        <p><%= item.name %></p>
-    <% end %>
-    <% end %>
+  <% if !@current_user.orders.present? %>
 
-<!-- link to log in or sign up before viewing orders-->
-<% end %>
-
-<% if !@current_user.present? %>
-<h4>Not signed in? <%= link_to 'Sign in', login_path %> or <%= link_to 'Sign up ', new_user_path %> to see your orders. </h4>
-<% end %><!-- end of if user present -->
+  <%= link_to 'Click here to start browsing', items_path %>
+  <% end %>
+</div>

@@ -1,38 +1,40 @@
+<div class="container">
+
 <h3>Edit Profile</h3>
 
 <div class="form">
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, :html => {:multipart => true}) do |f| %>
 
-<div class="field">
+<div class="form-group">
 <%= f.label :name, 'Name: ' %>
-<%= f.text_field :name, :required => true %>
+<%= f.text_field :name, :required => true, :class => 'form-control'  %>
 </div>
 
-<div class="field">
+<div class="form-group">
 <%= f.label :username, 'Choose a username: ' %>
-<%= f.text_field :username, :require => true  %>
+<%= f.text_field :username, :require => true, :class => 'form-control'   %>
 </div>
 
-<div class="field">
+<div class="form-group">
 <%= f.label :email, 'Enter email: ' %>
-<%= f.email_field :email, :required => true %>
+<%= f.email_field :email, :required => true, :class => 'form-control'  %>
 </div>
 
-<div class="field">
+<div class="form-group">
 <%= f.label :image, 'Upload a pic: ' %>
-<%= f.text_field :image %>
+<%= f.cl_image_upload :image, :class => 'form-control'  %>
 </div>
 
-<div class="field">
+<div class="form-group">
 <%= f.label :bio, 'A bit about you: ' %>
-<%= f.text_area :bio %>
+<%= f.text_area :bio, :class => 'form-control'  %>
 </div>
 
-<div class="field">
-<%= f.submit "Edit Profile!" %>
-</div>
+<%= f.submit "Edit Profile!", :class => 'btn btn-light' %>
 
 <% end %>
+
+</div>
 
 </div>

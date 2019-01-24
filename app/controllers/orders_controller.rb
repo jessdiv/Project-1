@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  require 'time'
   def index
     @orders = Order.all.order(:start)
   end
@@ -28,9 +29,6 @@ class OrdersController < ApplicationController
     @current_user.orders.last.items << item
     # redirect_to order_path(@current_user.orders.last)
   end
-
-
-
 
   def complete_order
     @current_user.orders.last.update :status => 'complete'
