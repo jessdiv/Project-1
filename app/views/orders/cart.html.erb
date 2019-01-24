@@ -1,18 +1,65 @@
-<% if @current_user.present? %>
-<h1>CART</h1>
-<h4><%= @current_user.orders.last.id %>. <%= @current_user.orders.last.start %> - <%= @current_user.orders.last.end %></h4>
+<div class="container">
+  <div class="row"></div>
+    <% if @current_user.present? %>
+    <h2>CART</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <p>Order Number:  </p>
+        </div>
+        <div class="col-md">
+          <p><%= @current_user.orders.last.id %></p>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md">
+            <p>Pick up:  </p>
+          </div>
+          <div class="col-md">
+            <% if @current_user.orders.last.start.present? %>
+            <p><%= @current_user.orders.last.start.strftime("%b #{@current_user.orders.last.start.day.ordinalize}, %Y") %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <p>Drop off:  </p>
+          </div>
+          <div class="col-md">
+            <% if @current_user.orders.last.end.present? %>
+            <p><%= @current_user.orders.last.end.strftime("%b #{@current_user.orders.last.end.day.ordinalize}, %Y") %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <p>Items:  </p>
+          </div>
+          <div class="col-md">
+            <% @current_user.orders.last.items.each do |item| %>
+            <p><%= item.name %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <p>Total price:  </p>
+          </div>
+          <div class="col-md">
+            <p><%= number_to_currency @current_user.orders.last.calculate_price %></p>
+          </div>
+        </div>
 
-<p>Items in cart:</p>
-<% @current_user.orders.last.items.each do |item| %>
-<p><%= item.name %></p>
-<% end %>
 
-<h4>Total Price: <%= @current_user.orders.last.calculate_price %></h4>
+    <% if @current_user.orders.last.items.present? && @current_user.orders.last.start.present? %>
+      <%= link_to 'Add more items', items_path %>
+      <%= link_to 'Edit order', new_order_path %>
+      <%= link_to 'Complete order', complete_order_path %>
+    <% else %>
+      <%= link_to 'Add an item', items_path %>
 
-<%= link_to 'Add more items', items_path %>
-
-<%= link_to 'Edit order', new_order_path %>
-
-<%= link_to 'Complete order', complete_order_path %>
-
-<% end %>
+    <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

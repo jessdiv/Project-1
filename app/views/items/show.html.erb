@@ -1,34 +1,61 @@
 <h3><%= @item.name %></h3>
 
-<% if @item.image.present? %>
+<div class="container">
+  <% if @item.image.present? %>
 
-<p><%= cl_image_tag @item.image, :class => 'feature' %></p>
-<% end %>
+  <p><%= cl_image_tag @item.image, :class => 'feature' %></p>
+  <% end %>
+  <div class="container">
+    <h5>Prices</h5>
+    <div class="row">
+      <div class="col-md">
+          <p>1 day: </p>
+      </div>
+      <div class="col-md">
+        <p><%= number_to_currency @item.dayprice  %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+          <p>7 days: </p>
+      </div>
+      <div class="col-md">
+        <p><%= number_to_currency @item.weekprice  %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+          <p>30 days: </p>
+      </div>
+      <div class="col-md">
+        <p><%= number_to_currency @item.monthprice  %></p>
+      </div>
+    </div>
 
-<h5>Prices</h5>
-<p>Day: <%= number_to_currency @item.dayprice  %></p>
-<p>Week: <%= number_to_currency @item.weekprice  %></p>
-<p>Month: <%= number_to_currency @item.monthprice %></p>
 
 <!-- form to fill out dates to add item to order -->
 
-<% if @current_user != @item.user %>
+    <% if @current_user.name != @item.user.name %>
 
-<%=  link_to 'Hire now!', new_order_path(:item_id => @item.id) %>
+    <h2><%=  link_to 'Add to cart', new_order_path(:item_id => @item.id) %></h2>
 
-<!-- Display either link to profile or edit/remove functions-->
+    <!-- Display either link to profile or edit/remove functions-->
+    <div class="container">
+      <p>Find out more about the renter:
+      <%= link_to @item.user.username, user_path(@item.user) %>
+      </p>
 
-  <p>Find out more about the renter:
-    <%# <%= link_to @item.user.username, user_path(@item.user.id) %> %>
-  </p>
-  <% elsif %>
-  <% @current_user == @item.user %>
-    <p><%= link_to 'Edit Item', edit_item_path %></p>
-    <p><%= link_to 'Remove Item', item_path(@item.id), :method => 'delete', :data => {:confirm => 'Are you sure you want to remove this item?'}%></p>
-<% end %>
+      <% elsif %>
+      <% @current_user == @item.user %>
+        <p><%= link_to 'Edit Item', edit_item_path %></p>
+        <p><%= link_to 'Remove Item', item_path(@item.id), :method => 'delete', :data => {:confirm => 'Are you sure you want to remove this item?'}%></p>
+    <% end %>
 
-<p>Catgeories:
-<% @item.categories.each do |category| %>
-<%= link_to category.name, category_path(category.id) %>
-<% end %>
-</p>
+    <p>Catgeories:
+    <% @item.categories.each do |category| %>
+    <%= link_to category.name, category_path(category.id) %>
+    <% end %>
+    </p>
+    </div>
+</div>
+</div>

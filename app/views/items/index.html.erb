@@ -2,16 +2,17 @@
 <h3>All items</h3>
 <!-- loops through all the  -->
 <div class="container">
-<div class='row'>
-<% @items.each do |item| %>
-<div class="col-md-4 item-box">
-<h3><%=  link_to item.name, item_path(item) %></h3>
+  <div class='row'>
+      <% @items.each do |item| %>
+    <div class="col-md-4 item-box">
+      <h3><%=  link_to item.name, item_path(item) %></h3>
 
-<% if item.image.present? %>
-<a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
-</div>
+      <% if item.image.present? %>
+      <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
 
-<% end %>
-<% end %>
-</div>
+    </div>
+
+    <% end %>
+    <% end %>
+  </div>
 </div>

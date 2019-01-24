@@ -34,6 +34,9 @@
             <%= link_to "View Profile", user_path(@current_user.id), :class => 'nav-link' %>
           </li>
           <li class="nav-item">
+            <%= link_to "View Cart", cart_path(@current_user.orders.last.id), :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Add Item", new_item_path, :class => 'nav-link' %>
           </li>
           <li class="nav-item">
@@ -51,7 +54,7 @@
         </ul>
       </div>
     </nav>
-<h2 class="sub-heading">Peer to peer camera gear rental.</h2>
+<h1 class="sub-heading">Peer to peer camera gear rental.</h1>
     <% if @current_user.present? %>
         <p>Hello, <%= @current_user.username %> </p>
         <% end %>

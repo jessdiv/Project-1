@@ -1,6 +1,5 @@
 <h3>Sign up!</h3>
 
-<form>
 
 <% if @user.errors.any? %>
 <ol>
@@ -10,7 +9,7 @@
 </ol>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, :html => {:multipart =>true}) do |f| %>
 
 <div class="form-group">
 <%= f.label :name, 'Name: ' %>
@@ -29,7 +28,7 @@
 
 <div class="form-group">
 <%= f.label :image, 'Upload a pic: ' %>
-<%= f.text_field :image, :class => 'form-control' %>
+<%= f.cl_image_upload :image, :class => 'form-control' %>
 </div>
 
 <div class="form-group">
@@ -47,9 +46,7 @@
 <%= f.password_field :password_confirmation, :required => true, :class => 'form-control' %>
 </div>
 
-<%= f.submit "Sign Up!", :class => "btn btn-primary" %>
+<%= f.submit "Sign Up", :class => "btn btn-light" %>
 
 
 <% end %>
-
-</form>

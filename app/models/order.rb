@@ -21,7 +21,7 @@ class Order < ApplicationRecord
 
     self.items.each do |item|
       puts "item: #{item}"
-      
+
       order_length = (self.end - self.start).to_i
       puts "order_length: #{order_length}"
 
