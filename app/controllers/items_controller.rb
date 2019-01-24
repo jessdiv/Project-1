@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
       @item.image = req["public_id"]
       @item.save
     end
-    redirect_to items_path
+    redirect_to @item
   end
 
   def edit

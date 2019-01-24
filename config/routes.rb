@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
+  
   resources :users, :only => [:new, :create, :show, :edit, :update]
-
   resources :items
   resources :categories
   resources :orders

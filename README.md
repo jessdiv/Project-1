@@ -29,6 +29,7 @@ Spearhead is a peer to peer camera gear rental platform. This project was bulit 
 - Fix bugs
 - To add a search bar for all products.
 - Use the 'geocoder' gem to track location of items on a map.
+- Introduce the ability to take card payments. 
 
 ## Authors
 
