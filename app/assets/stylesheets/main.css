@@ -1,90 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
-
-
-nav {
-  background-color: #f55e55;
-  color: white;
-  padding: 10px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-}
-
-nav h1 {
-  font-size: 30px;
-  padding: 0;
-}
-
-.form {
-  max-width: 600px;
-  margin: auto;
-}
-
-.form .field {
-  display: block;
-  padding: 15px;
-}
-
-
-.allitems {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: auto auto auto;
-  justify-content: center;
-}
-
-.griditem {
-  display: inline-grid;
-  border: solid #ccc 2px;
-  height: 250px;
-  padding: 25px;
-}
-
-.productContainer {
-  display: grid;
-  grid-template-columns: 15% auto;
-  grid-gap: 15px;
-  justify-content: center;
-}
-
-.categorySidebar {
-  display: inline-grid;
-  padding: 10px;
-}
-
-.categorySidebar a {
-  text-decoration: none;
-  color: black;
-}
-
-.categorySidebar a:hover {
-  color: #f55e55;
-}
-
-.browseContainer {
-  display: grid;
-  grid-template-columns: 15% auto;
-}
-
-.browseSidebar {
-  display: inline-grid;
-  padding: 10px;
-}
-
-.itemsinCategory {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: auto auto auto;
-  justify-content: center;
-}
-
-.eachItem {
-  display: inline-grid;
-  border: solid #ccc 2px;
-} */
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Staatliches');
 
 /* font-family: 'Playfair Display', serif; */
@@ -101,12 +14,17 @@ h1, h2 {
   text-shadow: 1px 1px #ff0000;
 }
 
+h1 {
+  font-size: 60px;
+}
+
 .feature {
   width: 40%;
 }
 
 .thumb {
-  max-width: 20em;
+  width: 80%;
+
 }
 
 .avatar {
@@ -150,13 +68,20 @@ body, html {
   padding: 20px;
 }
 
-.item-box {
-  border-radius: 1em;
-  box-shadow: 2px 5px #ccc;
-}
-
 .navigation {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.home-content p {
+    font-size: 25px;
+}
+
+.item-box {
+  /* border: solid #ddd 2px; */
+}
+
+.cartbox {
+  /* border: solid black 1px; */
 }

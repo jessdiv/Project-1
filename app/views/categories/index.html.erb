@@ -14,19 +14,21 @@
   <div class="container">
     <div class="row">
       <% @categories.each do |category| %>
-        <div class="container">
-
-        <h2><%= category.name %></h2>
-
+        <div class="col-md">
+          <h2><%= category.name %></h2>
         </div>
     </div>
+  </div>
+
+  <div class="container">
+
     <div class="row">
       <% category.items.each do |item| %>
       <div class="col-md-4 item-box">
-        <h3><%= link_to item.name, item_path(item) %></h3>
+        <h4><%= link_to item.name, item_path(item) %></h4>
 
         <% if item.image.present? %>
-        <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
+        <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb"></a>
       </div>
         <% end %>
 

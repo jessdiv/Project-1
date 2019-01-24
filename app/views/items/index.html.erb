@@ -4,11 +4,13 @@
 <div class="container">
   <div class='row'>
       <% @items.each do |item| %>
-    <div class="col-md-4 item-box">
-      <h3><%=  link_to item.name, item_path(item) %></h3>
 
-      <% if item.image.present? %>
-      <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
+    <div class="col-md-4 item-box">
+      <div class="row justify-content-center row-eq-height">
+        <h4><%=  link_to item.name, item_path(item) %></h4>
+      </div>
+        <% if item.image.present? %>
+        <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb"></a>
 
     </div>
 
