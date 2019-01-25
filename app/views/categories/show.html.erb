@@ -12,11 +12,13 @@
     <div class="container browsebar">
       <div class="row">
         <div class="col-md">
-          <%= link_to 'All Categories', categories_path %> |
+          <%= link_to 'All Categories', categories_path %>
+          |
 
           <% @categories.each do |category| %>
 
-          <%= link_to category.name, category_path(category.id)%> |
+            <%= link_to category.name, category_path(category.id)%>
+            |
 
           <% end %>
         </div>
@@ -30,20 +32,20 @@
       </div>
     </div>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="row">
-      <% @category.items.each do |item| %>
-        <div class="col-md-4 item-box">
-          <h4><%= link_to item.name, item_path(item) %></h4>
+      <div class="row">
+        <% @category.items.each do |item| %>
+          <div class="col-md-4 item-box">
+            <h4><%= link_to item.name, item_path(item) %></h4>
 
-          <% if item.image.present? %>
-          <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
-        </div>
+            <% if item.image.present? %>
+              <a href="<%= item_path(item) %>"><img src="<%= item.image %>" alt="edit" class="thumb "></a>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+
+      </div>
 
     </div>
-
   </div>
-</div>

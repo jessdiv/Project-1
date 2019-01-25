@@ -1,51 +1,56 @@
 <div class="container">
   <div class="row"></div>
-    <% if @current_user.present? %>
+  <% if @current_user.present? %>
     <h2>Cart</h2>
     <div class="container">
       <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>Order Number:  </p>
-        </div>
-        <div class="col-md-6">
-          <p><%= @current_user.orders.last.id %></p>
-        </div>
-      </div>
         <div class="row">
           <div class="col-md-6">
-            <p>Pick up:  </p>
+            <p>Order Number:
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p><%= @current_user.orders.last.id %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Pick up:
+            </p>
           </div>
           <div class="col-md-6">
             <% if @current_user.orders.last.start.present? %>
-            <p><%= @current_user.orders.last.start.strftime("%b #{@current_user.orders.last.start.day.ordinalize}, %Y") %></p>
+              <p><%= @current_user.orders.last.start.strftime("%b #{@current_user.orders.last.start.day.ordinalize}, %Y") %></p>
             <% end %>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
-            <p>Drop off:  </p>
+            <p>Drop off:
+            </p>
           </div>
           <div class="col-md-6">
             <% if @current_user.orders.last.end.present? %>
-            <p><%= @current_user.orders.last.end.strftime("%b #{@current_user.orders.last.end.day.ordinalize}, %Y") %></p>
+              <p><%= @current_user.orders.last.end.strftime("%b #{@current_user.orders.last.end.day.ordinalize}, %Y") %></p>
             <% end %>
           </div>
 
         </div>
         <div class="row">
           <div class="col-md-6">
-            <p>Items:  </p>
+            <p>Items:
+            </p>
           </div>
           <div class="col-md-6">
             <% @current_user.orders.last.items.each do |item| %>
-            <p><%= item.name %></p>
+              <p><%= item.name %></p>
             <% end %>
           </div>
         </div>
         <div class="row" style="background-color: #F5F5F5;">
           <div class="col-md-6">
-            <p>Total price:  </p>
+            <p>Total price:
+            </p>
           </div>
           <div class="col-md-6">
             <p><%= number_to_currency @current_user.orders.last.calculate_price %></p>
@@ -53,12 +58,11 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-          <%= '--' * 20 %>
+            <%= '--' * 20 %>
           </div>
         </div>
       </div>
     </div>
-
 
     <div class="container">
       <div class="row">
@@ -67,10 +71,7 @@
             <p><%= link_to 'Add more items', items_path %></p>
           </div>
           <!-- DISABLED AS NOT WORKING -->
-          <!-- <div class="col-md-2">
-
-           <p><%= link_to 'Edit order', new_order_path %></p>
-          </div> -->
+          <!-- <div class="col-md-2"> <p><%= link_to 'Edit order', new_order_path %></p> </div> -->
           <div class="col-md-12">
             <p><%= link_to 'Complete order', complete_order_path %></p>
           </div>
@@ -80,8 +81,8 @@
             <%= link_to 'Add an item', items_path %>
           </div>
         <% end %>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+  </div>
 
 </div>

@@ -1,32 +1,33 @@
 <!-- Display user profile info -->
+<div class="container">
   <div class="container">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2><%= @user.username %></h2>
-          <h5><%= @user.suburb %>, <%= @user.city %></h5>
-        </div>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-12">
-        <% if @user.image.present? %>
-        <%= cl_image_tag @user.image, :class => 'avatar' %>
-        <% end %>
+        <h2><%= @user.username %></h2>
+        <h5><%= @user.suburb %>,
+          <%= @user.city %></h5>
       </div>
-        </div>
-    <div class="row">
-      <div class="col-md-4"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @user.image.present? %>
+        <%= cl_image_tag @user.image, :class => 'avatar' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
 
     <div class="col-md-4">
-    <p><%= @user.bio %></p>
+      <p><%= @user.bio %></p>
     </div>
 
     <div class="col-md-4"></div>
-    </div>
-<!-- Display items associated with the user -->
+  </div>
+  <!-- Display items associated with the user -->
 
-    <% if @current_user == @user %>
+  <% if @current_user == @user %>
     <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
   </div>
-    <% end %>
+<% end %>

@@ -1,59 +1,69 @@
- <div class="container">
-<% if @current_user.present? && @current_user.orders.present? %>
-  <h2>My Orders</h2>
-  <div class="container">
+<div class="container">
+  <% if @current_user.present? && @current_user.orders.present? %>
+    <h2>My Orders</h2>
+    <div class="container">
 
-          <% @orders_array.each do |order| %>
-              <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                      <p><%= link_to 'Order No: ', order_path(order) %>  </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p><%= link_to order.id, order_path(order) %></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                      <p>Pick up:  </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p><%= order.start %></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                      <p>Drop off:  </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p><%= order.end %></p>
-                    </div>
-                </div>
-                <div class="row" style="background-color: #F5F5F5;">
-                    <div class="col-md-6">
-                      <p>Total Price:  </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p><%= number_to_currency order.calculate_price %></p>
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                  <%= '--' * 20 %>
-                  </div>
-                </div>
-              </div>
+      <% @orders_array.each do |order| %>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p><%= link_to 'Order No: ', order_path(order) %>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p><%= link_to order.id, order_path(order) %></p>
+            </div>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Pick up:
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p><%= order.start %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Drop off:
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p><%= order.end %></p>
+            </div>
+          </div>
+          <div class="row" style="background-color: #F5F5F5;">
+            <div class="col-md-6">
+              <p>Total Price:
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p><%= number_to_currency order.calculate_price %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <%= '--' * 20 %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <% end %>
+    <% end %>
   <% end %>
 
   <% if !@current_user.present?%>
-          <h4>Not signed in? <%= link_to 'Sign in', login_path %> or <%= link_to 'Sign up ', new_user_path %> to see your orders. </h4>
-    <% end %><!-- end of if user not present -->
+    <h4>Not signed in?
+      <%= link_to 'Sign in', login_path %>
+      or
+      <%= link_to 'Sign up ', new_user_path %>
+      to see your orders.
+    </h4>
+  <% end %>
+  <!-- end of if user not present -->
 
   <% if !@current_user.orders.present? %>
 
-  <%= link_to 'Click here to start browsing', items_path %>
+    <%= link_to 'Click here to start browsing', items_path %>
   <% end %>
 </div>

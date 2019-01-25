@@ -1,65 +1,64 @@
 <div class="container">
 
-<h3>Edit Profile</h3>
+  <h3>Edit Profile</h3>
 
-<div class="form">
+  <div class="form">
 
-<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+    <%= form_for(@user, :html => {:multipart => true}) do |f| %>
 
-<div class="form-group">
-<%= f.label :name, 'Name: ' %>
-<%= f.text_field :name, :required => true, :class => 'form-control'  %>
-</div>
+    <div class="form-group">
+      <%= f.label :name, 'Name: ' %>
+      <%= f.text_field :name, :required => true, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :username, 'Choose a username: ' %>
-<%= f.text_field :username, :require => true, :class => 'form-control'   %>
-</div>
+    <div class="form-group">
+      <%= f.label :username, 'Choose a username: ' %>
+      <%= f.text_field :username, :require => true, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :email, 'Enter email: ' %>
-<%= f.email_field :email, :required => true, :class => 'form-control'  %>
-</div>
+    <div class="form-group">
+      <%= f.label :email, 'Enter email: ' %>
+      <%= f.email_field :email, :required => true, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :phone, 'Enter phone number: ' %>
-<%= f.text_field :phone, :class => 'form-control'  %>
-</div>
+    <div class="form-group">
+      <%= f.label :phone, 'Enter phone number: ' %>
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :street, 'Street Address: ' %>
-<%= f.text_field :street, :class => 'form-control'  %>
-</div>
+    <div class="form-group">
+      <%= f.label :street, 'Street Address: ' %>
+      <%= f.text_field :street, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :suburb, 'Suburb: ' %>
-<%= f.text_field :suburb, :class => 'form-control', :required => true  %>
-</div>
+    <div class="form-group">
+      <%= f.label :suburb, 'Suburb: ' %>
+      <%= f.text_field :suburb, :class => 'form-control', :required => true %>
+    </div>
 
-<div class="form-group">
-<%= f.label :city, 'City: ' %>
-<%= f.text_field :city, :class => 'form-control', :required => true  %>
-</div>
+    <div class="form-group">
+      <%= f.label :city, 'City: ' %>
+      <%= f.text_field :city, :class => 'form-control', :required => true %>
+    </div>
 
-<div class="form-group">
-<%= f.label :country, 'Country: ' %>
-<%= f.text_field :street, :class => 'form-control', :required => true  %>
-</div>
+    <div class="form-group">
+      <%= f.label :country, 'Country: ' %>
+      <%= f.text_field :street, :class => 'form-control', :required => true %>
+    </div>
 
+    <div class="form-group">
+      <%= f.label :image, 'Upload a pic: ' %>
+      <%= f.cl_image_upload :image, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :image, 'Upload a pic: ' %>
-<%= f.cl_image_upload :image, :class => 'form-control'  %>
-</div>
+    <div class="form-group">
+      <%= f.label :bio, 'A bit about you: ' %>
+      <%= f.text_area :bio, :class => 'form-control' %>
+    </div>
 
-<div class="form-group">
-<%= f.label :bio, 'A bit about you: ' %>
-<%= f.text_area :bio, :class => 'form-control'  %>
-</div>
+    <%= f.submit "Edit Profile!", :class => 'btn btn-light' %>
 
-<%= f.submit "Edit Profile!", :class => 'btn btn-light' %>
-
-<% end %>
+  <% end %>
 
 </div>
 
