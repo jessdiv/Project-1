@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
       end
     end
     @orders_array = @orders_array.reverse
-    # raise 'hell'
   end
 
   def show
