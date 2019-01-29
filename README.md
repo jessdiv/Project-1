@@ -1,6 +1,6 @@
 # SPEARHEAD - Project1
 
-Spearhead is a peer to peer camera gear rental platform. This project was bulit as the second project in the WDI course at General Assembly. We were given 1 week to build an application using Ruby on Rails and any other resources we like.
+Spearhead is a peer to peer camera gear rental platform. This project was bulit as the second project in the WDI course at General Assembly. We were given 1 week to build an application using Ruby on Rails and any other resources we like. Check out the application [here](https://spearhead-app.herokuapp.com/).
 
 ## Built With
 
@@ -29,7 +29,7 @@ Spearhead is a peer to peer camera gear rental platform. This project was bulit 
 - Fix bugs
 - To add a search bar for all products.
 - Use the 'geocoder' gem to track location of items on a map.
-- Introduce the ability to take card payments. 
+- Introduce the ability to take card payments.
 
 ## Authors
 
